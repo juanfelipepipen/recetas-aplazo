@@ -8,7 +8,9 @@ import 'package:recetas_aplazo/src/presentation/router/routes/recipe_route.dart'
 class RecipeCard extends StatelessWidget {
   const RecipeCard({super.key, required this.recipe});
 
-  final Recipe recipe;
+  final Recipe? recipe;
+
+  bool get _isLoading => recipe == null;
 
   @override
   Widget build(BuildContext context) => PipenRow(
@@ -18,34 +20,54 @@ class RecipeCard extends StatelessWidget {
     children: [
       SizedBox(
         width: context.width * 0.2,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(16),
-          child: Image.network(recipe.thumb, fit: BoxFit.cover),
+        height: context.width * 0.2,
+        child: PipenSkeletonizer(
+          loading: _isLoading,
+          child: recipe != null
+              ? ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image.network(recipe!.thumb, fit: BoxFit.cover),
+                )
+              : Container(
+                  height: double.infinity,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.black,
+                  ),
+                ),
         ),
       ),
       Expanded(
         child: PipenColumn(
           spacing: 4,
           children: [
-            Text(recipe.name, style: context.textTheme.titleMedium),
-            if (recipe.area != null && recipe.category != null)
+            PipenTextSkeleton(
+              skeletonWith: context.width * 0.6,
+              value: recipe?.name,
+              style: context.textTheme.titleMedium,
+            ),
+            if (recipe?.area != null && recipe?.category != null)
               PipenRow(
                 spacing: 10,
                 children: [
-                  RecipeChip(title: recipe.area!),
-                  RecipeChip(title: recipe.category!),
+                  RecipeChip(title: recipe!.area!),
+                  RecipeChip(title: recipe!.category!),
                 ],
               ),
           ],
         ),
       ),
-      IconButton(
-        onPressed: () {
-          if (recipe != null) {
-            RecipeRoute(recipeId: recipe.id).push(context);
-          }
-        },
-        icon: Icon(Icons.keyboard_arrow_right_sharp),
+      PipenSkeletonizer(
+        loading: _isLoading,
+        child: IconButton(
+          icon: Icon(Icons.keyboard_arrow_right_sharp),
+          onPressed: () {
+            if (recipe != null) {
+              RecipeRoute(recipeId: recipe!.id).push(context);
+            }
+          },
+        ),
       ),
     ],
   );

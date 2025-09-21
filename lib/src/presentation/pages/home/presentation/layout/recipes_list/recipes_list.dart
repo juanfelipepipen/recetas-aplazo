@@ -1,4 +1,4 @@
-part of '../home_page.dart';
+part of '../../home_page.dart';
 
 class _RecipesList extends StatelessWidget {
   const _RecipesList();
@@ -29,12 +29,7 @@ class _RecipesList extends StatelessWidget {
               IconButton(onPressed: () {}, icon: Icon(Icons.search)),
             ],
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: (recipes ?? []).length,
-              itemBuilder: (context, index) => RecipeCard(recipe: (recipes ?? [])[index]),
-            ),
-          ),
+          Expanded(child: _RecipesListBuilder(recipes: recipes)),
         ],
       ),
     ),
