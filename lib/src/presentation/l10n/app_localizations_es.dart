@@ -10,4 +10,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get homeTitle => 'Recetas APLAZO';
+
+  @override
+  String get homeGreetings => '¿Qué vamos a cocinar hoy?';
+
+  @override
+  String get homeRecipes => 'Recetas';
 }

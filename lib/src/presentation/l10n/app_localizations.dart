@@ -17,7 +17,7 @@ import 'app_localizations_es.dart';
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'i10n/app_localizations.dart';
+/// import 'l10n/app_localizations.dart';
 ///
 /// return MaterialApp(
 ///   localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -99,6 +99,18 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Recetas APLAZO'**
   String get homeTitle;
+
+  /// No description provided for @homeGreetings.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Qué vamos a cocinar hoy?'**
+  String get homeGreetings;
+
+  /// No description provided for @homeRecipes.
+  ///
+  /// In es, this message translates to:
+  /// **'Recetas'**
+  String get homeRecipes;
 }
 
 class _AppLocalizationsDelegate
