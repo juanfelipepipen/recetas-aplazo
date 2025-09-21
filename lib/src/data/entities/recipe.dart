@@ -5,15 +5,16 @@ typedef RecipeIngredientList = List<RecipeIngredient>;
 typedef RecipeList = List<Recipe>;
 
 class Recipe {
-  final String name, category, area, thumb, instructions;
   final List<RecipeIngredient> ingredients;
+  final String name, thumb, instructions;
+  final String? category, area;
   final int id;
 
   Recipe({
     required this.id,
     required this.name,
-    required this.category,
-    required this.area,
+    this.category,
+    this.area,
     required this.ingredients,
     required this.thumb,
     required this.instructions,
@@ -39,8 +40,8 @@ class Recipe {
     return Recipe(
       id: json['idMeal']!.toString().toInt(),
       name: json['strMeal']!.toString(),
-      category: json['strCategory']!.toString(),
-      area: json['strArea']!.toString(),
+      category: json['strCategory']?.toString(),
+      area: json['strArea']?.toString(),
       ingredients: ingredients,
       thumb: json['strMealThumb']!.toString(),
       instructions: json['strInstructions']!.toString(),
