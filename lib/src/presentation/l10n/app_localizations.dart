@@ -112,6 +112,12 @@ abstract class AppLocalizations {
   /// **'Recetas'**
   String get homeRecipes;
 
+  /// No description provided for @homeLoadMoreButtonTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Ver mas recetas'**
+  String get homeLoadMoreButtonTitle;
+
   /// No description provided for @recipeIngredients.
   ///
   /// In es, this message translates to:

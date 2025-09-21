@@ -18,6 +18,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get homeRecipes => 'Recetas';
 
   @override
+  String get homeLoadMoreButtonTitle => 'Ver mas recetas';
+
+  @override
   String get recipeIngredients => 'Ingredientes';
 
   @override

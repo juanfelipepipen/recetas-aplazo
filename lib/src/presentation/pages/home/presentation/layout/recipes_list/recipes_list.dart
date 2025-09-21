@@ -24,7 +24,6 @@ class _RecipesList extends StatelessWidget {
                 context.localizations.homeRecipes,
                 style: context.textTheme.titleLarge?.copyWith(letterSpacing: 1),
               ),
-
               Spacer(),
               IconButton(onPressed: () {}, icon: Icon(Icons.search)),
             ],

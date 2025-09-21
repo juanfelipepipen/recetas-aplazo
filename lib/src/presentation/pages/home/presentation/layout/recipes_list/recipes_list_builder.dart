@@ -10,7 +10,7 @@ class _RecipesListBuilder extends StatefulWidget {
 }
 
 class _RecipesListBuilderState extends State<_RecipesListBuilder> {
-  List<Recipe?> _loaderList = [null, null, null, null];
+  final List<Recipe?> _loaderList = [null, null, null, null];
 
   @override
   Widget build(BuildContext context) => BlocBuilderFetch<RecipesCubit, RecipeList>(
@@ -18,12 +18,39 @@ class _RecipesListBuilderState extends State<_RecipesListBuilder> {
       builder: (context, recipes) {
         List<Recipe?> list = [...recipes];
         if (state is FetchLoading) list = [...list, ..._loaderList];
+        if (state is FetchSuccess && bloc.fetchable) list = [...list, null];
 
         return ListView.builder(
           itemCount: list.length,
-          itemBuilder: (context, index) => RecipeCard(recipe: list[index]),
+          itemBuilder: (context, index) {
+            final isEnd = index == list.length - 1;
+            if (isEnd && state is FetchSuccess) {
+              return _LoadMoreButton();
+            }
+
+            return RecipeCard(recipe: list[index]);
+          },
         );
       },
+    ),
+  );
+}
+
+class _LoadMoreButton extends StatelessWidget {
+  const _LoadMoreButton();
+
+  @override
+  Widget build(BuildContext context) => FilledButton.icon(
+    icon: Icon(Icons.add),
+    onPressed: context.read<RecipesCubit>().fetch,
+    label: Text(
+      context.localizations.homeLoadMoreButtonTitle,
+      style: TextStyle(color: Colors.black),
+    ),
+    style: FilledButton.styleFrom(
+      iconColor: Colors.black,
+      iconAlignment: IconAlignment.end,
+      backgroundColor: context.themeColors.primary,
     ),
   );
 }

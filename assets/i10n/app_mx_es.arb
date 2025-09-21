@@ -2,6 +2,7 @@
   "homeTitle": "Recetas APLAZO",
   "homeGreetings": "¿Qué vamos a\ncocinar hoy?",
   "homeRecipes": "Recetas",
+  "homeLoadMoreButtonTitle": "Ver mas recetas",
   "recipeIngredients": "Ingredientes",
   "recipeInstructions": "Instrucciones"
 }
