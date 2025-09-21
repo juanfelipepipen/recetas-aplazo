@@ -561,10 +561,10 @@ packages:
     dependency: "direct main"
     description:
       name: pipen
-      sha256: "98bb93735a4324796e5d9c40a041aafa9adaab2eedbc94a50069d528eddb04f8"
+      sha256: d6af7270412796c034e21bfc1c7c6fbb316aa9137abe4e97b5463b94ec12db75
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.2"
+    version: "2.2.3"
   pipen_bloc:
     dependency: "direct main"
     description:

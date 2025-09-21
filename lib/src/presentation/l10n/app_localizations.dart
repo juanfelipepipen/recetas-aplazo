@@ -103,7 +103,7 @@ abstract class AppLocalizations {
   /// No description provided for @homeGreetings.
   ///
   /// In es, this message translates to:
-  /// **'¿Qué vamos a cocinar hoy?'**
+  /// **'¿Qué vamos a\ncocinar hoy?'**
   String get homeGreetings;
 
   /// No description provided for @homeRecipes.
@@ -111,6 +111,18 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Recetas'**
   String get homeRecipes;
+
+  /// No description provided for @recipeIngredients.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingredientes'**
+  String get recipeIngredients;
+
+  /// No description provided for @recipeInstructions.
+  ///
+  /// In es, this message translates to:
+  /// **'Instrucciones'**
+  String get recipeInstructions;
 }
 
 class _AppLocalizationsDelegate

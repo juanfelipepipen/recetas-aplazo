@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:recetas_aplazo/src/presentation/l10n/app_localizations.dart';
 import 'package:recetas_aplazo/src/presentation/pages/root/root_builder_page.dart';
+import 'package:recetas_aplazo/src/presentation/router/routes/recipe_route.dart';
 import 'package:recetas_aplazo/src/presentation/router/routes/home_route.dart';
 
 part '../../router/app_router.dart';

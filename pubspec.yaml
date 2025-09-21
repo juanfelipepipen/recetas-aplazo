@@ -18,7 +18,7 @@ dependencies:
   flutter_bloc: ^9.1.1
   dio: ^5.9.0
   go_router: ^16.2.2
-  pipen: ^2.2.2
+  pipen: ^2.2.3
   pipen_bloc: ^1.2.4
 
 dev_dependencies:

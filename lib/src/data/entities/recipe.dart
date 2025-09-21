@@ -26,10 +26,10 @@ class Recipe {
 
     /// Get recipe ingredients
     for (int i = 1; i < 20; i++) {
-      if (json["strIngredient$i}"] != null && json["strIngredient$i}"].toString().isNotEmpty) {
+      if (json["strIngredient$i"] != null && json["strIngredient$i"].toString().isNotEmpty) {
         final RecipeIngredient ingredient = (
-          ingredient: json["strIngredient$i}"],
-          measure: json["strMeasure$i}"],
+          ingredient: json["strIngredient$i"],
+          measure: json["strMeasure$i"],
         );
         ingredients.add(ingredient);
       } else {

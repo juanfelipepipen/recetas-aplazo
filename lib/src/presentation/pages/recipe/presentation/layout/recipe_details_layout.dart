@@ -1,0 +1,79 @@
+part of '../recipe_page.dart';
+
+class _RecipeDetailsLayout extends StatelessWidget {
+  const _RecipeDetailsLayout();
+
+  @override
+  Widget build(BuildContext context) => _RecipeDetailBuilder(
+    builder: (context, state, bloc, recipe) => SingleChildScrollView(
+      padding: EdgeInsets.only(left: 30, right: 30, top: 40),
+      child: PipenColumn(
+        spacing: PipenGap.separatorSize,
+        children: [
+          PipenTextSkeleton(
+            skeletonWith: context.width,
+            value: recipe?.name,
+            style: context.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w500),
+          ),
+          PipenRow(
+            vertical: CrossAxisAlignment.center,
+            spacing: PipenGap.smallSize,
+            children: [
+              Icon(Icons.local_grocery_store, color: Colors.red),
+              Text(
+                context.localizations.recipeIngredients,
+                style: context.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 1,
+                ),
+              ),
+            ],
+          ),
+          PipenColumn(
+            children: (recipe?.ingredients ?? Helpers.defaultNulls<RecipeIngredient>(10))
+                .map(
+                  (e) => PipenRow(
+                    spacing: 10,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 8),
+                        child: Icon(
+                          Icons.circle,
+                          size: 8,
+                          color: Colors.red.withValues(alpha: 0.4),
+                        ),
+                      ),
+                      PipenTextSkeleton(
+                        skeletonWith: context.width * 0.8,
+                        value: e != null ? ('${e.ingredient}, ${e.measure}') : null,
+                        style: context.textTheme.bodyLarge,
+                      ),
+                    ],
+                  ),
+                )
+                .toList(),
+          ),
+          PipenRow(
+            vertical: CrossAxisAlignment.center,
+            spacing: PipenGap.smallSize,
+            children: [
+              Icon(Icons.featured_play_list, color: Colors.teal),
+              Text(
+                context.localizations.recipeInstructions,
+                style: context.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 1,
+                ),
+              ),
+            ],
+          ),
+          PipenTextSkeleton(
+            skeletonWith: context.width,
+            value: recipe?.instructions,
+            style: context.textTheme.bodyLarge?.copyWith(letterSpacing: 0),
+          ),
+        ],
+      ),
+    ),
+  );
+}

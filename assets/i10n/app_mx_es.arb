@@ -1,5 +1,7 @@
 {
   "homeTitle": "Recetas APLAZO",
-  "homeGreetings": "¿Qué vamos a cocinar hoy?",
-  "homeRecipes": "Recetas"
+  "homeGreetings": "¿Qué vamos a\ncocinar hoy?",
+  "homeRecipes": "Recetas",
+  "recipeIngredients": "Ingredientes",
+  "recipeInstructions": "Instrucciones"
 }

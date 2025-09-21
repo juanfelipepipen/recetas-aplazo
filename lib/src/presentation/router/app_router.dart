@@ -7,7 +7,7 @@ final GoRouter _router = GoRouter(
   routes: [
     ShellRoute(
       builder: (context, state, child) => RootBuilderPage(child: child),
-      routes: [HomeRoute.route],
+      routes: [HomeRoute.route, RecipeRoute.route],
     ),
   ],
 );
