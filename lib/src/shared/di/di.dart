@@ -10,10 +10,13 @@ import 'package:recetas_aplazo/src/presentation/pages/search/data/repository/sea
 import 'package:recetas_aplazo/src/presentation/pages/search/data/services/search_recipe_api_service.dart';
 import 'package:recetas_aplazo/src/presentation/pages/search/domain/bloc/recipe_search_cubit.dart';
 import 'package:recetas_aplazo/src/presentation/pages/search/domain/repository/search_recipe_repository.dart';
+import 'package:recetas_aplazo/src/shared/storage/recipe_like_service.dart';
 
 final GetIt locator = GetIt.instance;
 
 void initLocator() {
+  locator.registerLazySingleton<RecipeLikeService>(() => RecipeLikeService());
+
   /// Home
   locator.registerLazySingleton<HomeApiService>(() => HomeApiService());
   locator.registerLazySingleton<HomeRepository>(
@@ -24,7 +27,10 @@ void initLocator() {
   /// Recipes
   locator.registerLazySingleton<RecipeApiService>(() => RecipeApiService());
   locator.registerLazySingleton<RecipeRepository>(
-    () => RecipeRepositoryImpl(service: locator<RecipeApiService>()),
+    () => RecipeRepositoryImpl(
+      service: locator<RecipeApiService>(),
+      likeService: locator<RecipeLikeService>(),
+    ),
   );
 
   /// Search

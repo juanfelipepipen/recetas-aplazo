@@ -10,14 +10,26 @@ class _RecipeDetailsLayout extends StatelessWidget {
       child: PipenColumn(
         spacing: PipenGap.separatorSize,
         children: [
-          PipenTextSkeleton(
-            skeletonWith: context.width,
-            value: recipe?.name,
-            style: context.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w500),
-          ),
+          /// Recipe title & like
           PipenRow(
-            vertical: CrossAxisAlignment.center,
             spacing: PipenGap.smallSize,
+            vertical: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: PipenTextSkeleton(
+                  value: recipe?.name,
+                  skeletonWith: context.width,
+                  style: context.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w500),
+                ),
+              ),
+              _LikeButton(recipeId: recipe?.id),
+            ],
+          ),
+
+          /// Ingredients list
+          PipenRow(
+            spacing: PipenGap.smallSize,
+            vertical: CrossAxisAlignment.center,
             children: [
               Icon(Icons.local_grocery_store, color: Colors.red),
               Text(
@@ -29,6 +41,7 @@ class _RecipeDetailsLayout extends StatelessWidget {
               ),
             ],
           ),
+
           PipenColumn(
             children: (recipe?.ingredients ?? Helpers.defaultNulls<RecipeIngredient>(10))
                 .map(
@@ -53,6 +66,8 @@ class _RecipeDetailsLayout extends StatelessWidget {
                 )
                 .toList(),
           ),
+
+          /// Instructions
           PipenRow(
             vertical: CrossAxisAlignment.center,
             spacing: PipenGap.smallSize,

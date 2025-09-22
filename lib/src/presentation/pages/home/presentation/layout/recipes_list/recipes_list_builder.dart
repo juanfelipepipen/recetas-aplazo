@@ -22,12 +22,12 @@ class _RecipesListBuilderState extends State<_RecipesListBuilder> {
 
         return ListView.builder(
           itemCount: list.length,
+          padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
           itemBuilder: (context, index) {
             final isEnd = index == list.length - 1;
             if (isEnd && state is FetchSuccess) {
               return _LoadMoreButton();
             }
-
             return RecipeCard(recipe: list[index]);
           },
         );

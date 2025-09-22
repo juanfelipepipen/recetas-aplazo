@@ -23,6 +23,7 @@ class _ResultsListBuilder extends StatelessWidget {
         return ListView.builder(
           itemCount: results.length,
           itemBuilder: (context, index) => RecipeCard(recipe: results[index]),
+          padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
         );
       }
 

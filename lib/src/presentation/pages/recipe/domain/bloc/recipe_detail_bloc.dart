@@ -11,4 +11,6 @@ class RecipeDetailBloc extends CubitFetch<Recipe> {
 
   @override
   get resolver async => _repository.getRecipe(id: recipeId);
+
+  void like(bool value) {}
 }
