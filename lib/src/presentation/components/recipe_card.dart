@@ -7,8 +7,9 @@ import 'package:pipen/components.dart';
 import 'package:pipen/extensions.dart';
 
 class RecipeCard extends StatelessWidget {
-  const RecipeCard({super.key, required this.recipe});
+  const RecipeCard({super.key, required this.recipe, required this.onLike});
 
+  final Future<bool?> Function(int id, bool current) onLike;
   final Recipe? recipe;
 
   bool get _isLoading => recipe == null;
@@ -50,8 +51,11 @@ class RecipeCard extends StatelessWidget {
                 recipeId: recipe?.id,
                 isLiked: recipe?.like,
                 alignment: Alignment.topRight,
-                onTap: (d) async {
-                  return false;
+                onTap: (current) async {
+                  if (recipe?.id case int id) {
+                    return onLike(id, current);
+                  }
+                  return null;
                 },
               ),
             ),

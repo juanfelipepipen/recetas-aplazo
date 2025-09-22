@@ -23,6 +23,23 @@ class RecipeSearchCubit extends CubitFetchResolverPending<RecipeList> {
     );
   }
 
+  /// Like recipe using recipe repository
+  Future<bool?> like(int recipeId, bool current) async {
+    if (state is! FetchSuccess) return null;
+
+    final recipes = (state as FetchSuccess<RecipeList>).result;
+    final index = recipes.indexWhere((recipe) => recipe.id == recipeId);
+
+    if (index == -1) return null;
+
+    final like = _repository.like(recipeId);
+    RecipeList newRecipes = [...recipes];
+    newRecipes[index] = newRecipes[index].copyWith(like: like);
+
+    emit(FetchSuccess<RecipeList>(newRecipes));
+    return like;
+  }
+
   @override
   Future<void> close() {
     _debounceSearch?.cancel();

@@ -39,7 +39,10 @@ void initLocator() {
   /// Search
   locator.registerLazySingleton<SearchRecipeApiService>(() => SearchRecipeApiService());
   locator.registerLazySingleton<SearchRecipeRepository>(
-    () => SearchRecipeRepositoryImpl(service: locator<SearchRecipeApiService>()),
+    () => SearchRecipeRepositoryImpl(
+      likeService: locator<RecipeLikeService>(),
+      service: locator<SearchRecipeApiService>(),
+    ),
   );
   locator.registerFactory<RecipeSearchCubit>(
     () => RecipeSearchCubit(repository: locator<SearchRecipeRepository>()),

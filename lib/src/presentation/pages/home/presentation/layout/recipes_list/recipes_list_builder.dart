@@ -22,7 +22,7 @@ class _RecipesListBuilder extends StatelessWidget {
             if (isEnd && state is FetchSuccess) {
               return _RecipesLoadMoreButton();
             }
-            return RecipeCard(recipe: list[index]);
+            return RecipeCard(onLike: context.read<RecipesListCubit>().like, recipe: list[index]);
           },
         );
       },

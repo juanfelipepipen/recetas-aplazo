@@ -27,16 +27,4 @@ class HomeRepositoryImpl implements HomeRepository {
 
     return recipes;
   }
-
-  @override
-  Future<void> like(String recipeId) async {
-    // TODO: implement like
-    // throw UnimplementedError();
-  }
-
-  @override
-  Future<void> unLike(String recipeId) async {
-    // TODO: implement unLike
-    // throw UnimplementedError();
-  }
 }
