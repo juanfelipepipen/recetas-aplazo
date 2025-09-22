@@ -14,6 +14,7 @@ import 'package:pipen_bloc/pipen_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:pipen/components.dart';
 import 'package:pipen/extensions.dart';
+import 'package:recetas_aplazo/src/shared/di/di.dart';
 
 part 'layout/header.dart';
 part 'layout/search_input.dart';
@@ -26,8 +27,8 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
     providers: [
-      BlocProvider(create: (_) => RecipeSearchCubit()),
       BlocProvider(create: (_) => RecipeSearchInputCubit()),
+      BlocProvider(create: (_) => locator<RecipeSearchCubit>()),
     ],
     child: Scaffold(
       body: PipenGestureDismissKeyboard(

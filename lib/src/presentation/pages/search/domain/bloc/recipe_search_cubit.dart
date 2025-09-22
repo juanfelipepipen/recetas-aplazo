@@ -1,9 +1,12 @@
+import 'package:recetas_aplazo/src/presentation/pages/search/domain/repository/search_recipe_repository.dart';
 import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:pipen_bloc/pipen_bloc.dart';
-import 'package:dio/dio.dart';
 import 'dart:async';
 
 class RecipeSearchCubit extends CubitFetchResolverPending<RecipeList> {
+  RecipeSearchCubit({required SearchRecipeRepository repository}) : _repository = repository;
+
+  final SearchRecipeRepository _repository;
   Timer? _debounceSearch;
 
   /// Search recipe
@@ -14,24 +17,10 @@ class RecipeSearchCubit extends CubitFetchResolverPending<RecipeList> {
       return emit(FetchPending<RecipeList>());
     }
 
-    Future<RecipeList> fetcher() async {
-      final response = await Dio().get(
-        'https://www.themealdb.com/api/json/v1/1/search.php',
-        queryParameters: {'s': value},
-      );
-
-      if (response.statusCode == 200) {
-        if (response.data['meals'] != null) {
-          return Recipe.fromList(response.data['meals']);
-        }
-        return [];
-      }
-      throw Exception('Not recipe found');
-    }
-
-    _debounceSearch = Timer(Duration(seconds: 1), () {
-      fetch(fetcher());
-    });
+    _debounceSearch = Timer(
+      Duration(seconds: 1),
+      () => fetch(_repository.searchFromUserInput(input: value)),
+    );
   }
 
   @override
