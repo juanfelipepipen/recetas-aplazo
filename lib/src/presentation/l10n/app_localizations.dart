@@ -151,7 +151,7 @@ abstract class AppLocalizations {
   /// No description provided for @searchNotFound.
   ///
   /// In es, this message translates to:
-  /// **'No se encontraron resultados'**
+  /// **'No se encontraron recetas'**
   String get searchNotFound;
 }
 

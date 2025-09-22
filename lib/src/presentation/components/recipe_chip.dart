@@ -6,5 +6,5 @@ class RecipeChip extends StatelessWidget {
   final String title;
 
   @override
-  Widget build(BuildContext context) => Container(child: Text(title));
+  Widget build(BuildContext context) => Text(title);
 }

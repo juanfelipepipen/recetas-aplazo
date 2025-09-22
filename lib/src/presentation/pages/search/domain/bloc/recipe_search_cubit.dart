@@ -10,15 +10,21 @@ class RecipeSearchCubit extends CubitFetchResolverPending<RecipeList> {
   void search(String value) {
     _debounceSearch?.cancel();
 
+    if (value.isEmpty) {
+      return emit(FetchPending<RecipeList>());
+    }
+
     Future<RecipeList> fetcher() async {
       final response = await Dio().get(
         'https://www.themealdb.com/api/json/v1/1/search.php',
         queryParameters: {'s': value},
       );
 
-      if (response.statusCode == 200 && response.data['meals'] != null) {
-        if (response.data['meals'] == null) return [];
-        return Recipe.fromList(response.data['meals']);
+      if (response.statusCode == 200) {
+        if (response.data['meals'] != null) {
+          return Recipe.fromList(response.data['meals']);
+        }
+        return [];
       }
       throw Exception('Not recipe found');
     }

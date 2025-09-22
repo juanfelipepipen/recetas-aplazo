@@ -36,5 +36,5 @@ class AppLocalizationsEs extends AppLocalizations {
   String get searchInputLabel => 'Buscar receta';
 
   @override
-  String get searchNotFound => 'No se encontraron resultados';
+  String get searchNotFound => 'No se encontraron recetas';
 }

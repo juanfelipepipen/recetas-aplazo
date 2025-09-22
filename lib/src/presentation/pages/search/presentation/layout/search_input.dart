@@ -8,11 +8,20 @@ class _SearchInput extends StatelessWidget {
     builder: (context, input, bloc) => FormuxTextField(
       floatingLabelBehavior: FloatingLabelBehavior.never,
       label: context.localizations.searchInputLabel,
+      input: input,
       onChange: (value) {
         bloc.update(value);
         context.read<RecipeSearchCubit>().search(value);
       },
-      input: input,
+      suffixIcon: input.value.isNotEmpty
+          ? IconButton(
+              icon: Icon(Icons.close),
+              onPressed: () {
+                bloc.update('');
+                context.read<RecipeSearchCubit>().search('');
+              },
+            )
+          : null,
     ),
   );
 }

@@ -8,5 +8,5 @@
   "searchTitle": "¿Qué te gustaría cocinar?",
   "searchEmptyTitle": "¡Busca tus recetas preferidas!",
   "searchInputLabel": "Buscar receta",
-  "searchNotFound": "No se encontraron resultados"
+  "searchNotFound": "No se encontraron recetas"
 }

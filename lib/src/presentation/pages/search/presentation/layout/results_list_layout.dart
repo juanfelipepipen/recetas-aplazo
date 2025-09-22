@@ -9,16 +9,7 @@ class _ResultsListLayout extends StatelessWidget {
       children: [
         BackButtonComponent(color: Colors.white, safeTop: false, safeLeft: false),
         _SearchInput(),
-        Center(
-          child: PipenColumn.center(
-            padding: EdgeInsets.only(top: PipenGap.largeSize),
-            spacing: PipenGap.smallSize,
-            children: [
-              Image.asset('assets/img/barbecue.png', width: context.width * 0.6),
-              Text(context.localizations.searchEmptyTitle, style: context.textTheme.titleMedium),
-            ],
-          ),
-        ),
+        Expanded(child: _ResultsListBuilder()),
       ],
     ),
   );
