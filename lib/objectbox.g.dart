@@ -14,120 +14,28 @@ import 'package:objectbox/internal.dart'
 import 'package:objectbox/objectbox.dart' as obx;
 import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 
-import 'src/data/entities/recipe_box.dart';
-import 'src/data/entities/recipe_ingredient_box.dart';
 import 'src/data/entities/recipe_like.dart';
 
 export 'package:objectbox/objectbox.dart'; // so that callers only have to import this file
 
 final _entities = <obx_int.ModelEntity>[
   obx_int.ModelEntity(
-    id: const obx_int.IdUid(1, 1773299069495257580),
-    name: 'RecipeBox',
-    lastPropertyId: const obx_int.IdUid(6, 7160334311558013792),
-    flags: 0,
-    properties: <obx_int.ModelProperty>[
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(1, 7196880739335547105),
-        name: 'name',
-        type: 9,
-        flags: 0,
-      ),
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(2, 4058405421840627388),
-        name: 'thumb',
-        type: 9,
-        flags: 0,
-      ),
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(3, 3894558496900036234),
-        name: 'instructions',
-        type: 9,
-        flags: 0,
-      ),
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(4, 2739113567217476412),
-        name: 'category',
-        type: 9,
-        flags: 0,
-      ),
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(5, 6948796137382316556),
-        name: 'area',
-        type: 9,
-        flags: 0,
-      ),
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(6, 7160334311558013792),
-        name: 'id',
-        type: 6,
-        flags: 1,
-      ),
-    ],
-    relations: <obx_int.ModelRelation>[],
-    backlinks: <obx_int.ModelBacklink>[
-      obx_int.ModelBacklink(
-        name: 'ingredients',
-        srcEntity: 'RecipeIngredientBox',
-        srcField: 'recipe',
-      ),
-    ],
-  ),
-  obx_int.ModelEntity(
-    id: const obx_int.IdUid(2, 6842420747035725010),
-    name: 'RecipeIngredientBox',
-    lastPropertyId: const obx_int.IdUid(4, 6513045653179145147),
-    flags: 0,
-    properties: <obx_int.ModelProperty>[
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(1, 3868361200159993085),
-        name: 'ingredient',
-        type: 9,
-        flags: 0,
-      ),
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(2, 7337524594620128062),
-        name: 'measure',
-        type: 9,
-        flags: 0,
-      ),
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(3, 4297799807596793428),
-        name: 'recipeId',
-        type: 11,
-        flags: 520,
-        indexId: const obx_int.IdUid(1, 1678427074988019803),
-        relationTarget: 'RecipeBox',
-      ),
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(4, 6513045653179145147),
-        name: 'id',
-        type: 6,
-        flags: 1,
-      ),
-    ],
-    relations: <obx_int.ModelRelation>[],
-    backlinks: <obx_int.ModelBacklink>[],
-  ),
-  obx_int.ModelEntity(
-    id: const obx_int.IdUid(3, 8266811759177901298),
+    id: const obx_int.IdUid(1, 525856386933041833),
     name: 'RecipeLike',
-    lastPropertyId: const obx_int.IdUid(2, 8081425788930329931),
+    lastPropertyId: const obx_int.IdUid(2, 5759059645754553863),
     flags: 0,
     properties: <obx_int.ModelProperty>[
       obx_int.ModelProperty(
-        id: const obx_int.IdUid(1, 7601518095305405139),
-        name: 'recipeId',
-        type: 11,
-        flags: 520,
-        indexId: const obx_int.IdUid(2, 3443740548305010875),
-        relationTarget: 'RecipeBox',
-      ),
-      obx_int.ModelProperty(
-        id: const obx_int.IdUid(2, 8081425788930329931),
+        id: const obx_int.IdUid(1, 4395692386263725621),
         name: 'id',
         type: 6,
         flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 5759059645754553863),
+        name: 'recipeId',
+        type: 6,
+        flags: 0,
       ),
     ],
     relations: <obx_int.ModelRelation>[],
@@ -173,8 +81,8 @@ Future<obx.Store> openStore({
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
     entities: _entities,
-    lastEntityId: const obx_int.IdUid(3, 8266811759177901298),
-    lastIndexId: const obx_int.IdUid(2, 3443740548305010875),
+    lastEntityId: const obx_int.IdUid(1, 525856386933041833),
+    lastIndexId: const obx_int.IdUid(0, 0),
     lastRelationId: const obx_int.IdUid(0, 0),
     lastSequenceId: const obx_int.IdUid(0, 0),
     retiredEntityUids: const [],
@@ -187,136 +95,9 @@ obx_int.ModelDefinition getObjectBoxModel() {
   );
 
   final bindings = <Type, obx_int.EntityDefinition>{
-    RecipeBox: obx_int.EntityDefinition<RecipeBox>(
-      model: _entities[0],
-      toOneRelations: (RecipeBox object) => [],
-      toManyRelations: (RecipeBox object) => {
-        obx_int.RelInfo<RecipeIngredientBox>.toOneBacklink(
-          3,
-          object.id,
-          (RecipeIngredientBox srcObject) => srcObject.recipe,
-        ): object.ingredients,
-      },
-      getId: (RecipeBox object) => object.id,
-      setId: (RecipeBox object, int id) {
-        object.id = id;
-      },
-      objectToFB: (RecipeBox object, fb.Builder fbb) {
-        final nameOffset = fbb.writeString(object.name);
-        final thumbOffset = fbb.writeString(object.thumb);
-        final instructionsOffset = fbb.writeString(object.instructions);
-        final categoryOffset = object.category == null
-            ? null
-            : fbb.writeString(object.category!);
-        final areaOffset = object.area == null
-            ? null
-            : fbb.writeString(object.area!);
-        fbb.startTable(7);
-        fbb.addOffset(0, nameOffset);
-        fbb.addOffset(1, thumbOffset);
-        fbb.addOffset(2, instructionsOffset);
-        fbb.addOffset(3, categoryOffset);
-        fbb.addOffset(4, areaOffset);
-        fbb.addInt64(5, object.id);
-        fbb.finish(fbb.endTable());
-        return object.id;
-      },
-      objectFromFB: (obx.Store store, ByteData fbData) {
-        final buffer = fb.BufferContext(fbData);
-        final rootOffset = buffer.derefObject(0);
-        final idParam = const fb.Int64Reader().vTableGet(
-          buffer,
-          rootOffset,
-          14,
-          0,
-        );
-        final areaParam = const fb.StringReader(
-          asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 12);
-        final categoryParam = const fb.StringReader(
-          asciiOptimization: true,
-        ).vTableGetNullable(buffer, rootOffset, 10);
-        final nameParam = const fb.StringReader(
-          asciiOptimization: true,
-        ).vTableGet(buffer, rootOffset, 4, '');
-        final thumbParam = const fb.StringReader(
-          asciiOptimization: true,
-        ).vTableGet(buffer, rootOffset, 6, '');
-        final instructionsParam = const fb.StringReader(
-          asciiOptimization: true,
-        ).vTableGet(buffer, rootOffset, 8, '');
-        final object = RecipeBox(
-          id: idParam,
-          area: areaParam,
-          category: categoryParam,
-          name: nameParam,
-          thumb: thumbParam,
-          instructions: instructionsParam,
-        );
-        obx_int.InternalToManyAccess.setRelInfo<RecipeBox>(
-          object.ingredients,
-          store,
-          obx_int.RelInfo<RecipeIngredientBox>.toOneBacklink(
-            3,
-            object.id,
-            (RecipeIngredientBox srcObject) => srcObject.recipe,
-          ),
-        );
-        return object;
-      },
-    ),
-    RecipeIngredientBox: obx_int.EntityDefinition<RecipeIngredientBox>(
-      model: _entities[1],
-      toOneRelations: (RecipeIngredientBox object) => [object.recipe],
-      toManyRelations: (RecipeIngredientBox object) => {},
-      getId: (RecipeIngredientBox object) => object.id,
-      setId: (RecipeIngredientBox object, int id) {
-        object.id = id;
-      },
-      objectToFB: (RecipeIngredientBox object, fb.Builder fbb) {
-        final ingredientOffset = fbb.writeString(object.ingredient);
-        final measureOffset = fbb.writeString(object.measure);
-        fbb.startTable(5);
-        fbb.addOffset(0, ingredientOffset);
-        fbb.addOffset(1, measureOffset);
-        fbb.addInt64(2, object.recipe.targetId);
-        fbb.addInt64(3, object.id);
-        fbb.finish(fbb.endTable());
-        return object.id;
-      },
-      objectFromFB: (obx.Store store, ByteData fbData) {
-        final buffer = fb.BufferContext(fbData);
-        final rootOffset = buffer.derefObject(0);
-        final idParam = const fb.Int64Reader().vTableGet(
-          buffer,
-          rootOffset,
-          10,
-          0,
-        );
-        final ingredientParam = const fb.StringReader(
-          asciiOptimization: true,
-        ).vTableGet(buffer, rootOffset, 4, '');
-        final measureParam = const fb.StringReader(
-          asciiOptimization: true,
-        ).vTableGet(buffer, rootOffset, 6, '');
-        final object = RecipeIngredientBox(
-          id: idParam,
-          ingredient: ingredientParam,
-          measure: measureParam,
-        );
-        object.recipe.targetId = const fb.Int64Reader().vTableGet(
-          buffer,
-          rootOffset,
-          8,
-          0,
-        );
-        object.recipe.attach(store);
-        return object;
-      },
-    ),
     RecipeLike: obx_int.EntityDefinition<RecipeLike>(
-      model: _entities[2],
-      toOneRelations: (RecipeLike object) => [object.recipe],
+      model: _entities[0],
+      toOneRelations: (RecipeLike object) => [],
       toManyRelations: (RecipeLike object) => {},
       getId: (RecipeLike object) => object.id,
       setId: (RecipeLike object, int id) {
@@ -324,8 +105,8 @@ obx_int.ModelDefinition getObjectBoxModel() {
       },
       objectToFB: (RecipeLike object, fb.Builder fbb) {
         fbb.startTable(3);
-        fbb.addInt64(0, object.recipe.targetId);
-        fbb.addInt64(1, object.id);
+        fbb.addInt64(0, object.id);
+        fbb.addInt64(1, object.recipeId);
         fbb.finish(fbb.endTable());
         return object.id;
       },
@@ -335,17 +116,17 @@ obx_int.ModelDefinition getObjectBoxModel() {
         final idParam = const fb.Int64Reader().vTableGet(
           buffer,
           rootOffset,
-          6,
-          0,
-        );
-        final object = RecipeLike(id: idParam);
-        object.recipe.targetId = const fb.Int64Reader().vTableGet(
-          buffer,
-          rootOffset,
           4,
           0,
         );
-        object.recipe.attach(store);
+        final recipeIdParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          6,
+          0,
+        );
+        final object = RecipeLike(id: idParam, recipeId: recipeIdParam);
+
         return object;
       },
     ),
@@ -354,77 +135,15 @@ obx_int.ModelDefinition getObjectBoxModel() {
   return obx_int.ModelDefinition(model, bindings);
 }
 
-/// [RecipeBox] entity fields to define ObjectBox queries.
-class RecipeBox_ {
-  /// See [RecipeBox.name].
-  static final name = obx.QueryStringProperty<RecipeBox>(
+/// [RecipeLike] entity fields to define ObjectBox queries.
+class RecipeLike_ {
+  /// See [RecipeLike.id].
+  static final id = obx.QueryIntegerProperty<RecipeLike>(
     _entities[0].properties[0],
   );
 
-  /// See [RecipeBox.thumb].
-  static final thumb = obx.QueryStringProperty<RecipeBox>(
+  /// See [RecipeLike.recipeId].
+  static final recipeId = obx.QueryIntegerProperty<RecipeLike>(
     _entities[0].properties[1],
-  );
-
-  /// See [RecipeBox.instructions].
-  static final instructions = obx.QueryStringProperty<RecipeBox>(
-    _entities[0].properties[2],
-  );
-
-  /// See [RecipeBox.category].
-  static final category = obx.QueryStringProperty<RecipeBox>(
-    _entities[0].properties[3],
-  );
-
-  /// See [RecipeBox.area].
-  static final area = obx.QueryStringProperty<RecipeBox>(
-    _entities[0].properties[4],
-  );
-
-  /// See [RecipeBox.id].
-  static final id = obx.QueryIntegerProperty<RecipeBox>(
-    _entities[0].properties[5],
-  );
-
-  /// see [RecipeBox.ingredients]
-  static final ingredients =
-      obx.QueryBacklinkToMany<RecipeIngredientBox, RecipeBox>(
-        RecipeIngredientBox_.recipe,
-      );
-}
-
-/// [RecipeIngredientBox] entity fields to define ObjectBox queries.
-class RecipeIngredientBox_ {
-  /// See [RecipeIngredientBox.ingredient].
-  static final ingredient = obx.QueryStringProperty<RecipeIngredientBox>(
-    _entities[1].properties[0],
-  );
-
-  /// See [RecipeIngredientBox.measure].
-  static final measure = obx.QueryStringProperty<RecipeIngredientBox>(
-    _entities[1].properties[1],
-  );
-
-  /// See [RecipeIngredientBox.recipe].
-  static final recipe = obx.QueryRelationToOne<RecipeIngredientBox, RecipeBox>(
-    _entities[1].properties[2],
-  );
-
-  /// See [RecipeIngredientBox.id].
-  static final id = obx.QueryIntegerProperty<RecipeIngredientBox>(
-    _entities[1].properties[3],
-  );
-}
-
-/// [RecipeLike] entity fields to define ObjectBox queries.
-class RecipeLike_ {
-  /// See [RecipeLike.recipe].
-  static final recipe = obx.QueryRelationToOne<RecipeLike, RecipeBox>(
-    _entities[2].properties[0],
-  );
-
-  /// See [RecipeLike.id].
-  static final id = obx.QueryIntegerProperty<RecipeLike>(
-    _entities[2].properties[1],
   );
 }

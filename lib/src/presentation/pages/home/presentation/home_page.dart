@@ -12,6 +12,7 @@ import 'package:recetas_aplazo/src/presentation/pages/home/domain/bloc/recipes_c
 import 'package:recetas_aplazo/src/presentation/pages/home/domain/bloc/recipes_list_cubit.dart';
 import 'package:recetas_aplazo/src/presentation/pages/home/domain/listener/recipes_listener.dart';
 import 'package:recetas_aplazo/src/presentation/router/routes/search_route.dart';
+import 'package:recetas_aplazo/src/shared/di.dart';
 
 part 'layout/header.dart';
 part 'layout/recipes_list/recipes_list.dart';
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
     providers: [
-      BlocProvider(create: (_) => RecipesCubit()),
+      BlocProvider(create: (_) => locator<RecipesCubit>()),
       BlocProvider(create: (_) => RecipesListCubit()),
     ],
     child: MultiBlocProvider(
