@@ -3,11 +3,14 @@
   "homeGreetings": "¿Qué vamos a\ncocinar hoy?",
   "homeRecipes": "Recetas",
   "homeLoadMoreButtonTitle": "Ver mas recetas",
+  "homeLoadError": "Ocurrió un error al cargar las recetas",
   "recipeIngredients": "Ingredientes",
   "recipeInstructions": "Instrucciones",
   "searchTitle": "¿Qué te gustaría cocinar?",
   "searchEmptyTitle": "¡Busca tus recetas preferidas!",
   "searchInputLabel": "Buscar receta",
   "searchNotFound": "No se encontraron recetas",
-  "componentRecipeCardErrorImage": "Ocurrió un error"
+  "componentRecipeCardErrorImage": "Ocurrió un error",
+  "componentBlocFetchFailedBuilderTitle": "Lo sentimos, ocurrió un error",
+  "componentBlocFetchFailedBuilderRetry": "Volver a intentar"
 }

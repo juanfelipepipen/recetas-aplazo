@@ -19,7 +19,13 @@ class _RecipesList extends StatelessWidget {
               IconButton(onPressed: () => SearchRoute().push(context), icon: Icon(Icons.search)),
             ],
           ),
-          Expanded(child: _RecipesListBuilder(recipes: recipes)),
+          Expanded(
+            child: BlocFetchFailedBuilder<RecipesCubit, RecipeList>(
+              onPressed: bloc.fetch,
+              title: context.localizations.homeLoadError,
+              child: _RecipesListBuilder(recipes: recipes),
+            ),
+          ),
         ],
       ),
     ),

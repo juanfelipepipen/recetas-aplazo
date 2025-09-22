@@ -21,6 +21,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get homeLoadMoreButtonTitle => 'Ver mas recetas';
 
   @override
+  String get homeLoadError => 'Ocurrió un error al cargar las recetas';
+
+  @override
   String get recipeIngredients => 'Ingredientes';
 
   @override
@@ -40,4 +43,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get componentRecipeCardErrorImage => 'Ocurrió un error';
+
+  @override
+  String get componentBlocFetchFailedBuilderTitle =>
+      'Lo sentimos, ocurrió un error';
+
+  @override
+  String get componentBlocFetchFailedBuilderRetry => 'Volver a intentar';
 }

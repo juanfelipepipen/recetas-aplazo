@@ -1,3 +1,4 @@
+import 'package:recetas_aplazo/src/presentation/components/bloc_fetch_failed_builder.dart';
 import 'package:recetas_aplazo/src/presentation/pages/home/domain/listener/recipes_listener.dart';
 import 'package:recetas_aplazo/src/presentation/pages/home/domain/bloc/recipes_list_cubit.dart';
 import 'package:recetas_aplazo/src/presentation/components/container_bordered_component.dart';
@@ -28,8 +29,8 @@ class HomePage extends StatelessWidget {
       BlocProvider(create: (_) => locator<RecipesCubit>()),
       BlocProvider(create: (_) => RecipesListCubit()),
     ],
-    child: MultiBlocProvider(
-      providers: [BlocListenerFetch<RecipesCubit, RecipeList>(listener: RecipesListener())],
+    child: BlocListenerFetch<RecipesCubit, RecipeList>(
+      listener: RecipesListener(),
       child: Scaffold(
         body: HeaderGradientComponent(
           child: Column(

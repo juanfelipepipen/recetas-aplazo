@@ -118,6 +118,12 @@ abstract class AppLocalizations {
   /// **'Ver mas recetas'**
   String get homeLoadMoreButtonTitle;
 
+  /// No description provided for @homeLoadError.
+  ///
+  /// In es, this message translates to:
+  /// **'Ocurrió un error al cargar las recetas'**
+  String get homeLoadError;
+
   /// No description provided for @recipeIngredients.
   ///
   /// In es, this message translates to:
@@ -159,6 +165,18 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Ocurrió un error'**
   String get componentRecipeCardErrorImage;
+
+  /// No description provided for @componentBlocFetchFailedBuilderTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Lo sentimos, ocurrió un error'**
+  String get componentBlocFetchFailedBuilderTitle;
+
+  /// No description provided for @componentBlocFetchFailedBuilderRetry.
+  ///
+  /// In es, this message translates to:
+  /// **'Volver a intentar'**
+  String get componentBlocFetchFailedBuilderRetry;
 }
 
 class _AppLocalizationsDelegate

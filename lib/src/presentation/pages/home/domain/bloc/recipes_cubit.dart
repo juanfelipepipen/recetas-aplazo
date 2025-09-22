@@ -12,15 +12,16 @@ class RecipesCubit extends CubitFetch<RecipeList> {
 
   static const int _maxLetters = 26;
 
-  int _lastChar = -1;
+  int _lastChar = 0;
 
   bool get fetchable => _lastChar != _maxLetters;
 
   @override
   get resolver async {
+    final char = _letters[_lastChar];
+    final recipes = await _repository.getRecipes(char: char);
     _lastChar++;
     if (_lastChar > _maxLetters) _lastChar = 0;
-    final char = _letters[_lastChar];
-    return _repository.getRecipes(char: char);
+    return recipes;
   }
 }
