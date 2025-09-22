@@ -58,9 +58,13 @@ class _FailerView extends StatelessWidget {
         spacing: PipenGap.verySmallSize,
         children: [
           Image.asset('assets/img/warning.png', width: context.width * 0.5),
-          Text(
-            title ?? context.localizations.componentBlocFetchFailedBuilderTitle,
-            style: context.textTheme.titleMedium?.copyWith(letterSpacing: 0),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: context.width * 0.1),
+            child: Text(
+              title ?? context.localizations.componentBlocFetchFailedBuilderTitle,
+              style: context.textTheme.titleMedium?.copyWith(letterSpacing: 0),
+              textAlign: TextAlign.center,
+            ),
           ),
           PipenGap.small(),
           if (onPressed case VoidCallback onPressed)

@@ -1,3 +1,4 @@
+import 'package:recetas_aplazo/src/presentation/components/bloc_fetch_failed_builder.dart';
 import 'package:recetas_aplazo/src/presentation/components/recipe_like_button.dart';
 import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/bloc/recipe_detail_bloc.dart';
 import 'package:recetas_aplazo/src/presentation/components/back_button_component.dart';
@@ -13,6 +14,7 @@ import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/recipe_detai
 import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/repository/recipe_repository.dart';
 import 'package:recetas_aplazo/src/shared/di/di.dart';
 
+part 'layout/layout_view.dart';
 part 'layout/recipe_thumb_layout.dart';
 part 'layout/recipe_details_layout.dart';
 
@@ -29,24 +31,7 @@ class RecipePage extends StatelessWidget {
     create: (_) => RecipeDetailBloc(recipeId: recipeId, repository: locator<RecipeRepository>()),
     child: BlocListenerFetch<RecipeDetailBloc, Recipe>(
       listener: RecipeDetailListener(onChange: onChange),
-      child: Scaffold(
-        body: PipenColumn(
-          children: [
-            Stack(
-              children: [
-                /// Recipe image layout
-                _RecipeThumbLayout(),
-
-                /// Back button
-                BackButtonComponent(),
-              ],
-            ),
-
-            /// Recipe details info layout
-            Expanded(child: SafeArea(top: false, child: _RecipeDetailsLayout())),
-          ],
-        ),
-      ),
+      child: Scaffold(body: _LayoutView()),
     ),
   );
 }

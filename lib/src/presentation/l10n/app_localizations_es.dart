@@ -30,6 +30,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get recipeInstructions => 'Instrucciones';
 
   @override
+  String get recipeLoadError =>
+      'No pudimos cargar la receta, por favor, vuelta a intentar';
+
+  @override
   String get searchTitle => '¿Qué te gustaría cocinar?';
 
   @override

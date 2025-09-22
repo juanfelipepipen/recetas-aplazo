@@ -18,6 +18,7 @@ class RootPage extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp.router(
     title: 'ucombi',
     theme: Theme.of(context).copyWith(
+      scaffoldBackgroundColor: Colors.white,
       primaryColor: Color.fromRGBO(0, 238, 252, 1),
       textSelectionTheme: TextSelectionThemeData(cursorColor: Color.fromRGBO(0, 238, 252, 1)),
       inputDecorationTheme: InputDecorationTheme(

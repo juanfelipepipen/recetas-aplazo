@@ -136,6 +136,12 @@ abstract class AppLocalizations {
   /// **'Instrucciones'**
   String get recipeInstructions;
 
+  /// No description provided for @recipeLoadError.
+  ///
+  /// In es, this message translates to:
+  /// **'No pudimos cargar la receta, por favor, vuelta a intentar'**
+  String get recipeLoadError;
+
   /// No description provided for @searchTitle.
   ///
   /// In es, this message translates to:

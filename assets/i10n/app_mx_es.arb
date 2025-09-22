@@ -6,6 +6,7 @@
   "homeLoadError": "Ocurrió un error al cargar las recetas",
   "recipeIngredients": "Ingredientes",
   "recipeInstructions": "Instrucciones",
+  "recipeLoadError": "No pudimos cargar la receta, por favor, vuelta a intentar",
   "searchTitle": "¿Qué te gustaría cocinar?",
   "searchEmptyTitle": "¡Busca tus recetas preferidas!",
   "searchInputLabel": "Buscar receta",
