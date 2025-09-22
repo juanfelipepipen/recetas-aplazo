@@ -14,17 +14,6 @@ class HomeRepositoryImpl implements HomeRepository {
   @override
   Future<RecipeList> getRecipes({required String char}) async {
     RecipeList recipes = await _service.request(char: char);
-
-    final likes = _likeService.getAll() ?? [];
-    final likedIds = likes.map((recipeLike) => recipeLike.recipeId).toSet();
-
-    for (var i = 0; i < recipes.length; i++) {
-      final recipe = recipes[i];
-      if (likedIds.contains(recipe.id)) {
-        recipes[i] = recipe.copyWith(like: true);
-      }
-    }
-
-    return recipes;
+    return _likeService.setLikesFromList(recipes);
   }
 }

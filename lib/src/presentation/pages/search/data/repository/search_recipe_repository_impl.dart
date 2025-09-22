@@ -14,8 +14,9 @@ class SearchRecipeRepositoryImpl implements SearchRecipeRepository {
   final SearchRecipeApiService _service;
 
   @override
-  Future<RecipeList> searchFromUserInput({required String input}) {
-    return _service.request(input: input);
+  Future<RecipeList> searchFromUserInput({required String input}) async {
+    final recipes = await _service.request(input: input);
+    return _likeService.setLikesFromList(recipes);
   }
 
   @override
