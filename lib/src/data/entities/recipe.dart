@@ -1,20 +1,23 @@
+import 'package:equatable/equatable.dart';
 import 'package:pipen/extensions.dart';
 
 typedef RecipeIngredient = ({String ingredient, String measure});
 typedef RecipeIngredientList = List<RecipeIngredient>;
 typedef RecipeList = List<Recipe>;
 
-class Recipe {
-  final List<RecipeIngredient> ingredients;
+class Recipe extends Equatable {
+  final RecipeIngredientList ingredients;
   final String name, thumb, instructions;
   final String? category, area;
+  final bool? like;
   final int id;
 
-  Recipe({
+  const Recipe({
+    this.area,
+    this.like,
+    this.category,
     required this.id,
     required this.name,
-    this.category,
-    this.area,
     required this.ingredients,
     required this.thumb,
     required this.instructions,
@@ -51,5 +54,30 @@ class Recipe {
   /// Get recipes from list
   static RecipeList fromList(List? list) {
     return (list ?? []).map((e) => Recipe.fromJson(e)).toList();
+  }
+
+  @override
+  List<Object?> get props => [id, like, category, area, name, thumb, instructions];
+
+  Recipe copyWith({
+    int? id,
+    bool? like,
+    String? name,
+    String? thumb,
+    String? area,
+    String? category,
+    String? instructions,
+    RecipeIngredientList? ingredients,
+  }) {
+    return Recipe(
+      id: id ?? this.id,
+      like: like ?? this.like,
+      name: name ?? this.name,
+      area: area ?? this.area,
+      thumb: thumb ?? this.thumb,
+      category: category ?? this.category,
+      ingredients: ingredients ?? this.ingredients,
+      instructions: instructions ?? this.instructions,
+    );
   }
 }

@@ -12,5 +12,15 @@ class RecipeDetailBloc extends CubitFetch<Recipe> {
   @override
   get resolver async => _repository.getRecipe(id: recipeId);
 
-  void like(bool value) {}
+  /// Like recipe using recipe repository
+  Future<bool?> like(bool current) async {
+    if (state is! FetchSuccess) return null;
+
+    final recipe = (state as FetchSuccess<Recipe>).result;
+    final like = _repository.like(recipeId);
+
+    emit(FetchSuccess<Recipe>(recipe.copyWith(like: like)));
+
+    return like;
+  }
 }

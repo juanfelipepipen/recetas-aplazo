@@ -5,5 +5,5 @@ abstract class RecipeRepository {
   Future<Recipe> getRecipe({required int id});
 
   /// Add to like list a recipe
-  Future<void> like(int recipeId);
+  bool like(int recipeId);
 }

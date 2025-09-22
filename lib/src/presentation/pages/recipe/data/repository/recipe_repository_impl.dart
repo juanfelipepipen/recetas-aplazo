@@ -12,12 +12,14 @@ class RecipeRepositoryImpl implements RecipeRepository {
   final RecipeApiService _service;
 
   @override
-  Future<Recipe> getRecipe({required int id}) {
-    return _service.request(recipeId: id);
+  Future<Recipe> getRecipe({required int id}) async {
+    final recipe = await _service.request(recipeId: id);
+    final recipeLike = _likeService.getRecipeLike(id);
+    return recipe.copyWith(like: recipeLike != null);
   }
 
   @override
-  Future<void> like(int recipeId) async {
-    _likeService.like(recipeId);
+  bool like(int recipeId) {
+    return _likeService.like(recipeId);
   }
 }

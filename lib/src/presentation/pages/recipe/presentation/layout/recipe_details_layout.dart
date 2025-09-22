@@ -22,7 +22,9 @@ class _RecipeDetailsLayout extends StatelessWidget {
                   style: context.textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w500),
                 ),
               ),
-              _LikeButton(recipeId: recipe?.id),
+
+              /// Like recipe
+              _LikeButton(recipeId: recipe?.id, isLiked: recipe?.like, onTap: bloc.like),
             ],
           ),
 

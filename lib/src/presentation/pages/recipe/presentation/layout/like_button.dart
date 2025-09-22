@@ -1,15 +1,18 @@
 part of '../recipe_page.dart';
 
 class _LikeButton extends StatelessWidget {
-  const _LikeButton({this.recipeId, this.isLiked});
+  const _LikeButton({this.recipeId, this.isLiked, required this.onTap});
 
+  final Future<bool?> Function(bool) onTap;
   final bool? isLiked;
   final int? recipeId;
 
   @override
   Widget build(BuildContext context) => PipenSkeletonizer(
+    loading: recipeId == null,
     child: LikeButton(
       size: 30,
+      onTap: onTap,
       isLiked: isLiked,
       circleColor: CircleColor(start: Colors.red.withValues(alpha: 0.7), end: Colors.red),
       bubblesColor: BubblesColor(
