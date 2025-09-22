@@ -6,7 +6,6 @@ class _RecipeThumbLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) => _RecipeDetailBuilder(
     builder: (context, state, bloc, recipe) => SizedBox(
-      height: context.height * 0.4,
       width: double.infinity,
       child: PipenSkeletonizer(
         state: state,

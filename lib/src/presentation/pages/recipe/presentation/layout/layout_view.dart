@@ -9,17 +9,24 @@ class _LayoutView extends StatelessWidget {
       BlocFetchFailedBuilder<RecipeDetailBloc, Recipe>(
         title: context.localizations.recipeLoadError,
         onPressed: context.read<RecipeDetailBloc>().fetch,
-        child: PipenColumn(
-          children: [
-            Stack(
-              children: [
-                /// Recipe image layout
-                _RecipeThumbLayout(),
-              ],
+        child: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              pinned: true,
+              automaticallyImplyLeading: false,
+              backgroundColor: Colors.white,
+              surfaceTintColor: Colors.transparent,
+              expandedHeight: MediaQuery.of(context).size.height * 0.4,
+              flexibleSpace: FlexibleSpaceBar(
+                collapseMode: CollapseMode.none,
+                background: _RecipeThumbLayout(),
+              ),
             ),
-
-            /// Recipe details info layout
-            Expanded(child: SafeArea(top: false, child: _RecipeDetailsLayout())),
+            SliverFillRemaining(
+              fillOverscroll: true,
+              hasScrollBody: false,
+              child: _RecipeDetailsLayout(),
+            ),
           ],
         ),
       ),
