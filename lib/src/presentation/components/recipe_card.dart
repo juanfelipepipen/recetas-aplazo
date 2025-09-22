@@ -1,3 +1,4 @@
+import 'package:recetas_aplazo/src/presentation/components/recipe_like_button.dart';
 import 'package:recetas_aplazo/src/presentation/router/routes/recipe_route.dart';
 import 'package:recetas_aplazo/src/presentation/components/recipe_chip.dart';
 import 'package:recetas_aplazo/src/data/entities/recipe.dart';
@@ -21,21 +22,40 @@ class RecipeCard extends StatelessWidget {
       SizedBox(
         width: context.width * 0.2,
         height: context.width * 0.2,
-        child: PipenSkeletonizer(
-          loading: _isLoading,
-          child: recipe != null
-              ? ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Image.network(recipe!.thumb, fit: BoxFit.cover),
-                )
-              : Container(
-                  height: double.infinity,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.black,
-                  ),
-                ),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            PipenSkeletonizer(
+              loading: _isLoading,
+              child: recipe != null
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.network(recipe!.thumb, fit: BoxFit.cover),
+                    )
+                  : Container(
+                      height: double.infinity,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.black,
+                      ),
+                    ),
+            ),
+            Positioned(
+              top: -10,
+              right: -10,
+              child: RecipeLikeButton(
+                size: 24,
+                filled: true,
+                recipeId: recipe?.id,
+                isLiked: recipe?.like,
+                alignment: Alignment.topRight,
+                onTap: (d) async {
+                  return false;
+                },
+              ),
+            ),
+          ],
         ),
       ),
       Expanded(

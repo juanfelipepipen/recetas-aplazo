@@ -17,6 +17,7 @@ import 'package:pipen/extensions.dart';
 part 'layout/header.dart';
 part 'layout/recipes_list/recipes_list.dart';
 part 'layout/recipes_list/recipes_list_builder.dart';
+part 'layout/recipes_list/recipes_load_more_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
