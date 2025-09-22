@@ -20,11 +20,11 @@ class _ResultsListBuilder extends StatelessWidget {
           );
         }
 
-        return ListView.builder(
-          itemCount: results.length,
-          itemBuilder: (context, index) => RecipeCard(onLike: bloc.like, recipe: results[index]),
-          padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
-        );
+        // return ListView.builder(
+        //   itemCount: results.length,
+        //   itemBuilder: (context, index) => RecipeCard(onLike: bloc.like, recipe: results[index]),
+        //   padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
+        // );
       }
 
       return SearchInfoContainer(

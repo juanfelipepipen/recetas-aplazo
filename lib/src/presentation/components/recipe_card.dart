@@ -7,9 +7,10 @@ import 'package:pipen/components.dart';
 import 'package:pipen/extensions.dart';
 
 class RecipeCard extends StatelessWidget {
-  const RecipeCard({super.key, required this.recipe, required this.onLike});
+  const RecipeCard({super.key, required this.recipe, required this.onLike, required this.onChange});
 
   final Future<bool?> Function(int id, bool current) onLike;
+  final OnRecipe onChange;
   final Recipe? recipe;
 
   bool get _isLoading => recipe == null;
@@ -88,7 +89,7 @@ class RecipeCard extends StatelessWidget {
           icon: Icon(Icons.keyboard_arrow_right_sharp),
           onPressed: () {
             if (recipe != null) {
-              RecipeRoute(recipeId: recipe!.id).push(context);
+              RecipeRoute(recipeId: recipe!.id, onChange: onChange).push(context);
             }
           },
         ),

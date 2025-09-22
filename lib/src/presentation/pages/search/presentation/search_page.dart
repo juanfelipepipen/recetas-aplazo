@@ -4,7 +4,6 @@ import 'package:recetas_aplazo/src/presentation/pages/search/domain/bloc/recipe_
 import 'package:recetas_aplazo/src/presentation/components/container_bordered_component.dart';
 import 'package:recetas_aplazo/src/presentation/components/header_gradient_component.dart';
 import 'package:recetas_aplazo/src/presentation/components/back_button_component.dart';
-import 'package:recetas_aplazo/src/presentation/components/recipe_card.dart';
 import 'package:recetas_aplazo/src/extensions/context_extension.dart';
 import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:recetas_aplazo/src/core/helpers.dart';

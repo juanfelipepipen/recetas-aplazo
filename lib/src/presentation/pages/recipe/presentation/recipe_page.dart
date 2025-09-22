@@ -9,6 +9,7 @@ import 'package:pipen_bloc/pipen_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:pipen/components.dart';
 import 'package:pipen/extensions.dart';
+import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/recipe_detail_listener.dart';
 import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/repository/recipe_repository.dart';
 import 'package:recetas_aplazo/src/shared/di/di.dart';
 
@@ -18,34 +19,33 @@ part 'layout/recipe_details_layout.dart';
 typedef _RecipeDetailBuilder = BlocBuilderFetchNullable<RecipeDetailBloc, Recipe>;
 
 class RecipePage extends StatelessWidget {
-  const RecipePage({super.key, required this.recipeId});
+  const RecipePage({super.key, required this.recipeId, required this.onChange});
 
+  final OnRecipe onChange;
   final int recipeId;
 
   @override
-  Widget build(BuildContext context) => MultiBlocProvider(
-    providers: [
-      BlocProvider(
-        create: (_) =>
-            RecipeDetailBloc(recipeId: recipeId, repository: locator<RecipeRepository>()),
-      ),
-    ],
-    child: Scaffold(
-      body: PipenColumn(
-        children: [
-          Stack(
-            children: [
-              /// Recipe image layout
-              _RecipeThumbLayout(),
+  Widget build(BuildContext context) => BlocProvider<RecipeDetailBloc>(
+    create: (_) => RecipeDetailBloc(recipeId: recipeId, repository: locator<RecipeRepository>()),
+    child: BlocListenerFetch<RecipeDetailBloc, Recipe>(
+      listener: RecipeDetailListener(onChange: onChange),
+      child: Scaffold(
+        body: PipenColumn(
+          children: [
+            Stack(
+              children: [
+                /// Recipe image layout
+                _RecipeThumbLayout(),
 
-              /// Back button
-              BackButtonComponent(),
-            ],
-          ),
+                /// Back button
+                BackButtonComponent(),
+              ],
+            ),
 
-          /// Recipe details info layout
-          Expanded(child: SafeArea(top: false, child: _RecipeDetailsLayout())),
-        ],
+            /// Recipe details info layout
+            Expanded(child: SafeArea(top: false, child: _RecipeDetailsLayout())),
+          ],
+        ),
       ),
     ),
   );

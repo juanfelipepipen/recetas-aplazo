@@ -8,8 +8,8 @@ class _RecipesListBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocBuilderFetch<RecipesCubit, RecipeList>(
-    builder: (context, state, bloc) => BlocBuilder<RecipesListCubit, RecipeList>(
-      builder: (context, recipes) {
+    builder: (context, state, bloc) => BlocBuilderP<RecipesListCubit, RecipeList>(
+      builder: (context, recipes, recipesListBloc) {
         List<Recipe?> list = [...recipes];
         if (state is FetchLoading) list = [...list, ..._loaderList];
         if (state is FetchSuccess && bloc.fetchable) list = [...list, null];
@@ -22,7 +22,11 @@ class _RecipesListBuilder extends StatelessWidget {
             if (isEnd && state is FetchSuccess) {
               return _RecipesLoadMoreButton();
             }
-            return RecipeCard(onLike: context.read<RecipesListCubit>().like, recipe: list[index]);
+            return RecipeCard(
+              onChange: recipesListBloc.update,
+              onLike: recipesListBloc.like,
+              recipe: list[index],
+            );
           },
         );
       },

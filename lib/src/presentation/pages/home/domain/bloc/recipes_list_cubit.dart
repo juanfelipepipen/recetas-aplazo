@@ -22,4 +22,13 @@ class RecipesListCubit extends Cubit<RecipeList> {
     emit(newRecipes);
     return like;
   }
+
+  /// Update recipe
+  void update(Recipe recipe) {
+    final index = state.indexWhere((r) => r.id == recipe.id);
+    if (index == -1) return;
+    RecipeList newRecipes = [...state];
+    newRecipes[index] = recipe;
+    emit(newRecipes);
+  }
 }

@@ -4,6 +4,7 @@ import 'package:pipen/extensions.dart';
 typedef RecipeIngredient = ({String ingredient, String measure});
 typedef RecipeIngredientList = List<RecipeIngredient>;
 typedef RecipeList = List<Recipe>;
+typedef OnRecipe = Function(Recipe);
 
 class Recipe extends Equatable {
   final RecipeIngredientList ingredients;
