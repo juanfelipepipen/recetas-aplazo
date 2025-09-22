@@ -22,13 +22,15 @@ dependencies:
   pipen_bloc: ^1.2.4
   flutter_formux: ^1.0.7
   async: ^2.13.0
+  objectbox: ^4.3.1
+  objectbox_flutter_libs: any
 
 dev_dependencies:
+  build_runner: any
+  objectbox_generator: any
   flutter_test:
     sdk: flutter
-
-
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
   generate: true

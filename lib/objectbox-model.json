@@ -1,0 +1,111 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:1773299069495257580",
+      "lastPropertyId": "6:7160334311558013792",
+      "name": "RecipeBox",
+      "properties": [
+        {
+          "id": "1:7196880739335547105",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "2:4058405421840627388",
+          "name": "thumb",
+          "type": 9
+        },
+        {
+          "id": "3:3894558496900036234",
+          "name": "instructions",
+          "type": 9
+        },
+        {
+          "id": "4:2739113567217476412",
+          "name": "category",
+          "type": 9
+        },
+        {
+          "id": "5:6948796137382316556",
+          "name": "area",
+          "type": 9
+        },
+        {
+          "id": "6:7160334311558013792",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:6842420747035725010",
+      "lastPropertyId": "4:6513045653179145147",
+      "name": "RecipeIngredientBox",
+      "properties": [
+        {
+          "id": "1:3868361200159993085",
+          "name": "ingredient",
+          "type": 9
+        },
+        {
+          "id": "2:7337524594620128062",
+          "name": "measure",
+          "type": 9
+        },
+        {
+          "id": "3:4297799807596793428",
+          "name": "recipeId",
+          "indexId": "1:1678427074988019803",
+          "type": 11,
+          "flags": 520,
+          "relationTarget": "RecipeBox"
+        },
+        {
+          "id": "4:6513045653179145147",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:8266811759177901298",
+      "lastPropertyId": "2:8081425788930329931",
+      "name": "RecipeLike",
+      "properties": [
+        {
+          "id": "1:7601518095305405139",
+          "name": "recipeId",
+          "indexId": "2:3443740548305010875",
+          "type": 11,
+          "flags": 520,
+          "relationTarget": "RecipeBox"
+        },
+        {
+          "id": "2:8081425788930329931",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "3:8266811759177901298",
+  "lastIndexId": "2:3443740548305010875",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
