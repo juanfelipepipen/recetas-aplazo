@@ -18,7 +18,7 @@ packages:
     source: hosted
     version: "2.7.0"
   async:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: async
       sha256: "758e6d74e971c3e5aceb4110bfd6698efc7f501675bcfe0c775459a8140750eb"
@@ -89,6 +89,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  currency_textfield:
+    dependency: transitive
+    description:
+      name: currency_textfield
+      sha256: dd9632c7e3b3df03cab995b572e1c3fbe2743f0367294f14f31fbc774c9559cb
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.15.1+2"
   dbus:
     dependency: transitive
     description:
@@ -129,6 +137,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  email_validator:
+    dependency: transitive
+    description:
+      name: email_validator
+      sha256: b19aa5d92fdd76fbc65112060c94d45ba855105a28bb6e462de7ff03b12fa1fb
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   expandable_page_view:
     dependency: transitive
     description:
@@ -190,6 +206,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "9.1.1"
+  flutter_formux:
+    dependency: "direct main"
+    description:
+      name: flutter_formux
+      sha256: b2cec404296d9d8dee61055a1ef7d335d28cdf45d8c6bf69cd954efb998d7210
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.7"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -277,6 +301,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  formux:
+    dependency: transitive
+    description:
+      name: formux
+      sha256: dd1430bd7a1cea2fdb86a2b104c583456697e25cdbe3031f03f13e0bafbbdda0
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.1"
   go_router:
     dependency: "direct main"
     description:

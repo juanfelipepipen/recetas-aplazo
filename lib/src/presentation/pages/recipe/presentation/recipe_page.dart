@@ -6,6 +6,7 @@ import 'package:pipen_bloc/pipen_bloc.dart';
 import 'package:recetas_aplazo/src/core/helpers.dart';
 import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:recetas_aplazo/src/extensions/context_extension.dart';
+import 'package:recetas_aplazo/src/presentation/components/back_button_component.dart';
 import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/bloc/recipe_detail_bloc.dart';
 
 part 'layout/recipe_details_layout.dart';
@@ -30,16 +31,7 @@ class RecipePage extends StatelessWidget {
               _RecipeThumbLayout(),
 
               /// Back button
-              SafeArea(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: IconButton.filled(
-                    color: context.themeColors.primary,
-                    onPressed: Navigator.of(context).pop,
-                    icon: Icon(Icons.arrow_back, color: Colors.black),
-                  ),
-                ),
-              ),
+              BackButtonComponent(),
             ],
           ),
 

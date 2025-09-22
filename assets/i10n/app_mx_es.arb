@@ -4,5 +4,9 @@
   "homeRecipes": "Recetas",
   "homeLoadMoreButtonTitle": "Ver mas recetas",
   "recipeIngredients": "Ingredientes",
-  "recipeInstructions": "Instrucciones"
+  "recipeInstructions": "Instrucciones",
+  "searchTitle": "¿Qué te gustaría cocinar?",
+  "searchEmptyTitle": "¡Busca tus recetas preferidas!",
+  "searchInputLabel": "Buscar receta",
+  "searchNotFound": "No se encontraron resultados"
 }

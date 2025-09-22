@@ -25,4 +25,16 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get recipeInstructions => 'Instrucciones';
+
+  @override
+  String get searchTitle => '¿Qué te gustaría cocinar?';
+
+  @override
+  String get searchEmptyTitle => '¡Busca tus recetas preferidas!';
+
+  @override
+  String get searchInputLabel => 'Buscar receta';
+
+  @override
+  String get searchNotFound => 'No se encontraron resultados';
 }

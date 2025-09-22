@@ -129,6 +129,30 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Instrucciones'**
   String get recipeInstructions;
+
+  /// No description provided for @searchTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Qué te gustaría cocinar?'**
+  String get searchTitle;
+
+  /// No description provided for @searchEmptyTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'¡Busca tus recetas preferidas!'**
+  String get searchEmptyTitle;
+
+  /// No description provided for @searchInputLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar receta'**
+  String get searchInputLabel;
+
+  /// No description provided for @searchNotFound.
+  ///
+  /// In es, this message translates to:
+  /// **'No se encontraron resultados'**
+  String get searchNotFound;
 }
 
 class _AppLocalizationsDelegate

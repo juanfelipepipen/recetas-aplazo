@@ -5,16 +5,7 @@ class _RecipesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BlocBuilderFetchNullable<RecipesCubit, RecipeList>(
-    builder: (context, state, bloc, recipes) => Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ),
-      ),
-      padding: EdgeInsets.only(left: 30, right: 30, top: 30),
+    builder: (context, state, bloc, recipes) => ContainerBorderedComponent(
       child: PipenColumn(
         children: [
           PipenRow(
@@ -25,7 +16,7 @@ class _RecipesList extends StatelessWidget {
                 style: context.textTheme.titleLarge?.copyWith(letterSpacing: 1),
               ),
               Spacer(),
-              IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+              IconButton(onPressed: () => SearchRoute().push(context), icon: Icon(Icons.search)),
             ],
           ),
           Expanded(child: _RecipesListBuilder(recipes: recipes)),
