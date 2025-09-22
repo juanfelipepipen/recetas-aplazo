@@ -10,6 +10,7 @@
   "searchEmptyTitle": "¡Busca tus recetas preferidas!",
   "searchInputLabel": "Buscar receta",
   "searchNotFound": "No se encontraron recetas",
+  "searchLoadError": "Ocurró un problema al realizar la búsqueda",
   "componentRecipeCardErrorImage": "Ocurrió un error",
   "componentBlocFetchFailedBuilderTitle": "Lo sentimos, ocurrió un error",
   "componentBlocFetchFailedBuilderRetry": "Volver a intentar"

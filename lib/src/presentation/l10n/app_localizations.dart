@@ -160,6 +160,12 @@ abstract class AppLocalizations {
   /// **'No se encontraron recetas'**
   String get searchNotFound;
 
+  /// No description provided for @searchLoadError.
+  ///
+  /// In es, this message translates to:
+  /// **'Ocurró un problema al realizar la búsqueda'**
+  String get searchLoadError;
+
   /// No description provided for @componentRecipeCardErrorImage.
   ///
   /// In es, this message translates to:

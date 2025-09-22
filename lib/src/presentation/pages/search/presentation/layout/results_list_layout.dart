@@ -9,7 +9,13 @@ class _ResultsListLayout extends StatelessWidget {
       children: [
         BackButtonComponent(color: Colors.white, safeTop: false, safeLeft: false),
         _SearchInput(),
-        Expanded(child: _ResultsListBuilder()),
+        Expanded(
+          child: BlocFetchFailedBuilder<RecipeSearchCubit, RecipeList>(
+            title: context.localizations.searchLoadError,
+            onPressed: context.read<RecipeSearchCubit>().retry,
+            child: _ResultsListBuilder(),
+          ),
+        ),
       ],
     ),
   );

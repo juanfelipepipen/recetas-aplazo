@@ -1,3 +1,4 @@
+import 'package:recetas_aplazo/src/presentation/components/bloc_fetch_failed_builder.dart';
 import 'package:recetas_aplazo/src/presentation/components/recipe_card.dart';
 import 'package:recetas_aplazo/src/presentation/pages/search/presentation/components/search_info_container.dart';
 import 'package:recetas_aplazo/src/presentation/pages/search/domain/bloc/recipe_search_input_cubit.dart';

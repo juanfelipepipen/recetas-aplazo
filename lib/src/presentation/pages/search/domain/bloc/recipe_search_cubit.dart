@@ -8,19 +8,33 @@ class RecipeSearchCubit extends CubitFetchResolverPending<RecipeList> {
 
   final SearchRecipeRepository _repository;
   Timer? _debounceSearch;
+  String _value = '';
 
   /// Search recipe
   void search(String value) {
+    _value = value;
     _debounceSearch?.cancel();
 
+    retry(debounce: true);
     if (value.isEmpty) {
       return emit(FetchPending<RecipeList>());
     }
+  }
 
-    _debounceSearch = Timer(
-      Duration(seconds: 1),
-      () => fetch(_repository.searchFromUserInput(input: value)),
-    );
+  /// Fetch search
+  void retry({bool debounce = false}) {
+    if (_value.isEmpty) {
+      return emit(FetchPending<RecipeList>());
+    }
+
+    fetcher() => fetch(_repository.searchFromUserInput(input: _value));
+
+    if (debounce) {
+      _debounceSearch = Timer(Duration(seconds: 1), () => fetcher());
+      return;
+    }
+
+    fetcher();
   }
 
   /// Like recipe using recipe repository
