@@ -1,5 +1,5 @@
-import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:recetas_aplazo/src/shared/dio/dio_service.dart';
+import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 
 class HomeApiService extends DioService {
   /// Request recipes list

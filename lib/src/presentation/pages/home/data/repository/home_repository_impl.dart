@@ -1,6 +1,6 @@
-import 'package:recetas_aplazo/src/data/entities/recipe.dart';
-import 'package:recetas_aplazo/src/presentation/pages/home/data/services/home_api_service.dart';
 import 'package:recetas_aplazo/src/presentation/pages/home/domain/repository/home_repository.dart';
+import 'package:recetas_aplazo/src/presentation/pages/home/data/services/home_api_service.dart';
+import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 
 class HomeRepositoryImpl implements HomeRepository {
   HomeRepositoryImpl({required HomeApiService service}) : _service = service;

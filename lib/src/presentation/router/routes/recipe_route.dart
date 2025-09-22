@@ -1,7 +1,7 @@
+import 'package:recetas_aplazo/src/presentation/pages/recipe/presentation/recipe_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pipen/extensions.dart';
 import 'package:pipen/routes.dart';
-import 'package:recetas_aplazo/src/presentation/pages/recipe/presentation/recipe_page.dart';
 
 class RecipeRoute extends TypeSafeRoute {
   RecipeRoute({required int recipeId})

@@ -1,6 +1,6 @@
+import 'package:recetas_aplazo/src/presentation/pages/search/presentation/search_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pipen/routes.dart';
-import 'package:recetas_aplazo/src/presentation/pages/search/presentation/search_page.dart';
 
 class SearchRoute extends TypeSafeRoute {
   SearchRoute() : super(name: routeName, path: routePath);

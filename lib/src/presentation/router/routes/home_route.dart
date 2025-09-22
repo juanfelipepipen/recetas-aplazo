@@ -1,6 +1,6 @@
+import 'package:recetas_aplazo/src/presentation/pages/home/presentation/home_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pipen/routes.dart';
-import 'package:recetas_aplazo/src/presentation/pages/home/presentation/home_page.dart';
 
 class HomeRoute extends TypeSafeRoute {
   HomeRoute() : super(name: routeName, path: routePath);

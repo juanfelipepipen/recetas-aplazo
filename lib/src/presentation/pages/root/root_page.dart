@@ -1,13 +1,13 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_formux/flutter_formux.dart';
-import 'package:go_router/go_router.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:recetas_aplazo/src/presentation/l10n/app_localizations.dart';
 import 'package:recetas_aplazo/src/presentation/pages/root/root_builder_page.dart';
 import 'package:recetas_aplazo/src/presentation/router/routes/recipe_route.dart';
-import 'package:recetas_aplazo/src/presentation/router/routes/home_route.dart';
 import 'package:recetas_aplazo/src/presentation/router/routes/search_route.dart';
+import 'package:recetas_aplazo/src/presentation/router/routes/home_route.dart';
+import 'package:recetas_aplazo/src/presentation/l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_formux/flutter_formux.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 part '../../router/app_router.dart';
 

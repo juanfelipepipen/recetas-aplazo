@@ -1,5 +1,5 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_formux/flutter_formux.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RecipeSearchInputCubit extends Cubit<FormuxStringInput> {
   RecipeSearchInputCubit() : super(FormuxStringInput());

@@ -1,6 +1,6 @@
-import 'package:pipen_bloc/pipen_bloc.dart';
-import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:recetas_aplazo/src/presentation/pages/home/domain/repository/home_repository.dart';
+import 'package:recetas_aplazo/src/data/entities/recipe.dart';
+import 'package:pipen_bloc/pipen_bloc.dart';
 
 class RecipesCubit extends CubitFetch<RecipeList> {
   RecipesCubit({required HomeRepository repository})

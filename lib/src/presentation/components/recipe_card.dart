@@ -1,9 +1,9 @@
+import 'package:recetas_aplazo/src/presentation/router/routes/recipe_route.dart';
+import 'package:recetas_aplazo/src/presentation/components/recipe_chip.dart';
+import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:flutter/material.dart';
 import 'package:pipen/components.dart';
 import 'package:pipen/extensions.dart';
-import 'package:recetas_aplazo/src/data/entities/recipe.dart';
-import 'package:recetas_aplazo/src/presentation/components/recipe_chip.dart';
-import 'package:recetas_aplazo/src/presentation/router/routes/recipe_route.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard({super.key, required this.recipe});

@@ -1,6 +1,6 @@
-import 'package:dio/dio.dart';
-import 'package:pipen_bloc/pipen_bloc.dart';
 import 'package:recetas_aplazo/src/data/entities/recipe.dart';
+import 'package:pipen_bloc/pipen_bloc.dart';
+import 'package:dio/dio.dart';
 
 class RecipeDetailBloc extends CubitFetch<Recipe> {
   RecipeDetailBloc({required this.recipeId});
