@@ -1,7 +1,9 @@
-part of '../recipe_page.dart';
+import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
+import 'package:pipen/components.dart';
 
-class _LikeButton extends StatelessWidget {
-  const _LikeButton({this.recipeId, this.isLiked, required this.onTap});
+class RecipeLikeButton extends StatelessWidget {
+  const RecipeLikeButton({super.key, this.recipeId, this.isLiked, required this.onTap});
 
   final Future<bool?> Function(bool) onTap;
   final bool? isLiked;

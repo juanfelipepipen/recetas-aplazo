@@ -20,7 +20,10 @@ void initLocator() {
   /// Home
   locator.registerLazySingleton<HomeApiService>(() => HomeApiService());
   locator.registerLazySingleton<HomeRepository>(
-    () => HomeRepositoryImpl(service: locator<HomeApiService>()),
+    () => HomeRepositoryImpl(
+      service: locator<HomeApiService>(),
+      likeService: locator<RecipeLikeService>(),
+    ),
   );
   locator.registerFactory<RecipesCubit>(() => RecipesCubit(repository: locator<HomeRepository>()));
 

@@ -12,6 +12,12 @@ class RecipeLikeService {
     return results;
   }
 
+  /// Get all recipe like items
+  RecipeLikeList? getAll() {
+    final box = store.box<RecipeLike>();
+    return box.getAll();
+  }
+
   /// Find recipe like model
   bool like(int recipeId) {
     final box = store.box<RecipeLike>();

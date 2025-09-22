@@ -1,4 +1,4 @@
-import 'package:like_button/like_button.dart';
+import 'package:recetas_aplazo/src/presentation/components/recipe_like_button.dart';
 import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/bloc/recipe_detail_bloc.dart';
 import 'package:recetas_aplazo/src/presentation/components/back_button_component.dart';
 import 'package:recetas_aplazo/src/extensions/context_extension.dart';
@@ -12,7 +12,6 @@ import 'package:pipen/extensions.dart';
 import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/repository/recipe_repository.dart';
 import 'package:recetas_aplazo/src/shared/di/di.dart';
 
-part 'layout/like_button.dart';
 part 'layout/recipe_thumb_layout.dart';
 part 'layout/recipe_details_layout.dart';
 

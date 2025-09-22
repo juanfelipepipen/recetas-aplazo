@@ -24,7 +24,7 @@ class _RecipeDetailsLayout extends StatelessWidget {
               ),
 
               /// Like recipe
-              _LikeButton(recipeId: recipe?.id, isLiked: recipe?.like, onTap: bloc.like),
+              RecipeLikeButton(recipeId: recipe?.id, isLiked: recipe?.like, onTap: bloc.like),
             ],
           ),
 

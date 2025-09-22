@@ -1,5 +1,7 @@
 import 'package:objectbox/objectbox.dart';
 
+typedef RecipeLikeList = List<RecipeLike>;
+
 @Entity()
 class RecipeLike {
   @Id()
