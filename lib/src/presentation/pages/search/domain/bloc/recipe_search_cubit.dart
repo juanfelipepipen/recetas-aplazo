@@ -40,6 +40,20 @@ class RecipeSearchCubit extends CubitFetchResolverPending<RecipeList> {
     return like;
   }
 
+  /// Update recipe
+  void update(Recipe recipe) {
+    if (state is! FetchSuccess) return;
+
+    final recipes = (state as FetchSuccess<RecipeList>).result;
+    final index = recipes.indexWhere((r) => r.id == recipe.id);
+    if (index == -1) return;
+
+    RecipeList newRecipes = [...recipes];
+    newRecipes[index] = recipe;
+
+    emit(FetchSuccess<RecipeList>(newRecipes));
+  }
+
   @override
   Future<void> close() {
     _debounceSearch?.cancel();

@@ -153,6 +153,12 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'No se encontraron recetas'**
   String get searchNotFound;
+
+  /// No description provided for @componentRecipeCardErrorImage.
+  ///
+  /// In es, this message translates to:
+  /// **'Ocurrió un error'**
+  String get componentRecipeCardErrorImage;
 }
 
 class _AppLocalizationsDelegate

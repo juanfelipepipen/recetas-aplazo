@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:recetas_aplazo/src/extensions/context_extension.dart';
 import 'package:recetas_aplazo/src/presentation/components/recipe_like_button.dart';
 import 'package:recetas_aplazo/src/presentation/router/routes/recipe_route.dart';
 import 'package:recetas_aplazo/src/presentation/components/recipe_chip.dart';
@@ -32,7 +34,27 @@ class RecipeCard extends StatelessWidget {
               child: recipe != null
                   ? ClipRRect(
                       borderRadius: BorderRadius.circular(16),
-                      child: Image.network(recipe!.thumb, fit: BoxFit.cover),
+                      child: CachedNetworkImage(
+                        fit: BoxFit.cover,
+                        imageUrl: recipe!.thumb,
+                        placeholder: (context, url) => PipenSkeletonizer(
+                          loading: true,
+                          child: SizedBox(height: double.infinity, width: double.infinity),
+                        ),
+                        errorWidget: (context, url, error) => Center(
+                          child: PipenColumn.center(
+                            spacing: PipenGap.verySmallSize,
+                            children: [
+                              Icon(Icons.error, color: context.themeColors.error),
+                              Text(
+                                textAlign: TextAlign.center,
+                                context.localizations.componentRecipeCardErrorImage,
+                                style: context.textTheme.labelSmall?.copyWith(letterSpacing: 0),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     )
                   : Container(
                       height: double.infinity,

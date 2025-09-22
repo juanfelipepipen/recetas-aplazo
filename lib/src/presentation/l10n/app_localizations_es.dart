@@ -37,4 +37,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get searchNotFound => 'No se encontraron recetas';
+
+  @override
+  String get componentRecipeCardErrorImage => 'Ocurrió un error';
 }

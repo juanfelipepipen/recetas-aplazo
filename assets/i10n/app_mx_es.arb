@@ -8,5 +8,6 @@
   "searchTitle": "¿Qué te gustaría cocinar?",
   "searchEmptyTitle": "¡Busca tus recetas preferidas!",
   "searchInputLabel": "Buscar receta",
-  "searchNotFound": "No se encontraron recetas"
+  "searchNotFound": "No se encontraron recetas",
+  "componentRecipeCardErrorImage": "Ocurrió un error"
 }
