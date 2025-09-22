@@ -8,6 +8,8 @@ import 'package:pipen_bloc/pipen_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:pipen/components.dart';
 import 'package:pipen/extensions.dart';
+import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/repository/recipe_repository.dart';
+import 'package:recetas_aplazo/src/shared/di/di.dart';
 
 part 'layout/recipe_details_layout.dart';
 part 'layout/recipe_thumb_layout.dart';
@@ -21,7 +23,12 @@ class RecipePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
-    providers: [BlocProvider(create: (_) => RecipeDetailBloc(recipeId: recipeId))],
+    providers: [
+      BlocProvider(
+        create: (_) =>
+            RecipeDetailBloc(recipeId: recipeId, repository: locator<RecipeRepository>()),
+      ),
+    ],
     child: Scaffold(
       body: PipenColumn(
         children: [

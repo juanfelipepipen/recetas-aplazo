@@ -1,24 +1,14 @@
 import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:pipen_bloc/pipen_bloc.dart';
-import 'package:dio/dio.dart';
+import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/repository/recipe_repository.dart';
 
 class RecipeDetailBloc extends CubitFetch<Recipe> {
-  RecipeDetailBloc({required this.recipeId});
+  RecipeDetailBloc({required this.recipeId, required RecipeRepository repository})
+    : _repository = repository;
 
+  final RecipeRepository _repository;
   final int recipeId;
 
   @override
-  get resolver async {
-    final response = await Dio().get(
-      'https://www.themealdb.com/api/json/v1/1/lookup.php',
-      queryParameters: {'i': recipeId},
-    );
-    if (response.statusCode == 200 && response.data['meals'] != null) {
-      final List meals = response.data['meals'];
-      if (meals.isNotEmpty) {
-        return Recipe.fromJson(meals.first);
-      }
-    }
-    throw Exception('Not recipe found');
-  }
+  get resolver async => _repository.getRecipe(id: recipeId);
 }

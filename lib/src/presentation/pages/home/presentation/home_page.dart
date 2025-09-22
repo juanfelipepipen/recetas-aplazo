@@ -7,7 +7,7 @@ import 'package:recetas_aplazo/src/presentation/router/routes/search_route.dart'
 import 'package:recetas_aplazo/src/presentation/components/recipe_card.dart';
 import 'package:recetas_aplazo/src/extensions/context_extension.dart';
 import 'package:recetas_aplazo/src/data/entities/recipe.dart';
-import 'package:recetas_aplazo/src/shared/di.dart';
+import 'package:recetas_aplazo/src/shared/di/di.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pipen_bloc/pipen_bloc.dart';
 import 'package:flutter/material.dart';
