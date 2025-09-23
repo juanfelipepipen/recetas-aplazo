@@ -1,7 +1,7 @@
-import 'package:recetas_aplazo/objectbox.g.dart';
-import 'package:recetas_aplazo/src/core/app_object_box.dart';
-import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:recetas_aplazo/src/data/entities/recipe_like.dart';
+import 'package:recetas_aplazo/src/data/entities/recipe.dart';
+import 'package:recetas_aplazo/src/core/app_object_box.dart';
+import 'package:recetas_aplazo/objectbox.g.dart';
 
 class RecipeLikeService {
   /// Find recipe like model

@@ -1,16 +1,16 @@
-import 'package:recetas_aplazo/src/presentation/pages/home/data/repository/home_repository_impl.dart';
-import 'package:recetas_aplazo/src/presentation/pages/home/domain/repository/home_repository.dart';
-import 'package:recetas_aplazo/src/presentation/pages/home/data/services/home_api_service.dart';
-import 'package:recetas_aplazo/src/presentation/pages/home/domain/bloc/recipes_cubit.dart';
-import 'package:get_it/get_it.dart';
-import 'package:recetas_aplazo/src/presentation/pages/recipe/data/repository/recipe_repository_impl.dart';
-import 'package:recetas_aplazo/src/presentation/pages/recipe/data/services/recipe_api_service.dart';
-import 'package:recetas_aplazo/src/presentation/pages/recipe/domain/repository/recipe_repository.dart';
-import 'package:recetas_aplazo/src/presentation/pages/search/data/repository/search_recipe_repository_impl.dart';
-import 'package:recetas_aplazo/src/presentation/pages/search/data/services/search_recipe_api_service.dart';
-import 'package:recetas_aplazo/src/presentation/pages/search/domain/bloc/recipe_search_cubit.dart';
-import 'package:recetas_aplazo/src/presentation/pages/search/domain/repository/search_recipe_repository.dart';
+import 'package:recetas_aplazo/src/feature/pages/search/data/repository/search_recipe_repository_impl.dart';
+import 'package:recetas_aplazo/src/feature/pages/search/domain/repository/search_recipe_repository.dart';
+import 'package:recetas_aplazo/src/feature/pages/search/data/services/search_recipe_api_service.dart';
+import 'package:recetas_aplazo/src/feature/pages/recipe/data/repository/recipe_repository_impl.dart';
+import 'package:recetas_aplazo/src/feature/pages/recipe/domain/repository/recipe_repository.dart';
+import 'package:recetas_aplazo/src/feature/pages/home/data/repository/home_repository_impl.dart';
+import 'package:recetas_aplazo/src/feature/pages/recipe/data/services/recipe_api_service.dart';
+import 'package:recetas_aplazo/src/feature/pages/home/domain/repository/home_repository.dart';
+import 'package:recetas_aplazo/src/feature/pages/search/domain/bloc/recipe_search_cubit.dart';
+import 'package:recetas_aplazo/src/feature/pages/home/data/services/home_api_service.dart';
+import 'package:recetas_aplazo/src/feature/pages/home/domain/bloc/recipes_cubit.dart';
 import 'package:recetas_aplazo/src/shared/storage/recipe_like_service.dart';
+import 'package:get_it/get_it.dart';
 
 final GetIt locator = GetIt.instance;
 
