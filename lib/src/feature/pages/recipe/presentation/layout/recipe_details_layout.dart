@@ -63,10 +63,12 @@ class _RecipeDetailsLayout extends StatelessWidget {
                       padding: EdgeInsets.only(top: 8),
                       child: Icon(Icons.circle, size: 8, color: Colors.red.withValues(alpha: 0.4)),
                     ),
-                    PipenTextSkeleton(
-                      skeletonWith: context.width * 0.8,
-                      value: e != null ? ('${e.ingredient}, ${e.measure}') : null,
-                      style: context.textTheme.bodyLarge,
+                    Expanded(
+                      child: PipenTextSkeleton(
+                        skeletonWith: context.width * 0.8,
+                        value: e != null ? ('${e.ingredient}, ${e.measure}') : null,
+                        style: context.textTheme.bodyLarge,
+                      ),
                     ),
                   ],
                 ),
