@@ -42,11 +42,11 @@ class Recipe extends Equatable {
     }
 
     return Recipe(
+      ingredients: ingredients,
       id: json['idMeal']!.toString().toInt(),
       name: json['strMeal']!.toString(),
       category: json['strCategory']?.toString(),
       area: json['strArea']?.toString(),
-      ingredients: ingredients,
       thumb: json['strMealThumb']!.toString(),
       instructions: json['strInstructions']!.toString(),
     );

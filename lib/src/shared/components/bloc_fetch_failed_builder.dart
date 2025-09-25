@@ -1,9 +1,9 @@
-import 'package:recetas_aplazo/src/extensions/context_extension.dart';
 import 'package:pipen_bloc/pipen_bloc.dart';
 import 'package:pipen/extensions.dart';
 import 'package:pipen/components.dart';
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
+import 'package:recetas_aplazo/src/shared/extensions/context_extension.dart';
 
 class BlocFetchFailedBuilder<B extends StateStreamable<FetchState<S>>, S> extends StatelessWidget {
   const BlocFetchFailedBuilder({

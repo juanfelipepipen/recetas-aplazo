@@ -3,8 +3,8 @@ import 'package:recetas_aplazo/src/feature/pages/recipe/domain/bloc/recipe_detai
 import 'package:recetas_aplazo/src/feature/pages/recipe/domain/recipe_detail_listener.dart';
 import 'package:recetas_aplazo/src/shared/components/bloc_fetch_failed_builder.dart';
 import 'package:recetas_aplazo/src/shared/components/back_button_component.dart';
+import 'package:recetas_aplazo/src/shared/components/recipe_chip.dart';
 import 'package:recetas_aplazo/src/shared/components/recipe_like_button.dart';
-import 'package:recetas_aplazo/src/extensions/context_extension.dart';
 import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:recetas_aplazo/src/core/helpers.dart';
 import 'package:recetas_aplazo/src/shared/di/di.dart';
@@ -13,6 +13,7 @@ import 'package:pipen_bloc/pipen_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:pipen/components.dart';
 import 'package:pipen/extensions.dart';
+import 'package:recetas_aplazo/src/shared/extensions/context_extension.dart';
 
 part 'layout/layout_view.dart';
 part 'layout/recipe_thumb_layout.dart';

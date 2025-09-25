@@ -1,7 +1,7 @@
 import 'package:recetas_aplazo/src/shared/components/recipe_like_button.dart';
+import 'package:recetas_aplazo/src/shared/extensions/context_extension.dart';
 import 'package:recetas_aplazo/src/shared/router/routes/recipe_route.dart';
 import 'package:recetas_aplazo/src/shared/components/recipe_chip.dart';
-import 'package:recetas_aplazo/src/extensions/context_extension.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:flutter/material.dart';
@@ -94,14 +94,14 @@ class RecipeCard extends StatelessWidget {
               value: recipe?.name,
               style: context.textTheme.titleMedium,
             ),
-            if (recipe?.area != null && recipe?.category != null)
-              PipenRow(
-                spacing: 10,
-                children: [
-                  RecipeChip(title: recipe!.area!),
-                  RecipeChip(title: recipe!.category!),
-                ],
-              ),
+            Wrap(
+              direction: Axis.horizontal,
+              spacing: PipenGap.verySmallSize,
+              children: [
+                RecipeChip(title: recipe?.area),
+                RecipeChip(title: recipe?.category),
+              ],
+            ),
           ],
         ),
       ),

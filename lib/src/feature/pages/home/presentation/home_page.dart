@@ -4,9 +4,9 @@ import 'package:recetas_aplazo/src/shared/components/container_bordered_componen
 import 'package:recetas_aplazo/src/feature/pages/home/domain/bloc/recipes_cubit.dart';
 import 'package:recetas_aplazo/src/shared/components/bloc_fetch_failed_builder.dart';
 import 'package:recetas_aplazo/src/shared/components/header_gradient_component.dart';
+import 'package:recetas_aplazo/src/shared/extensions/context_extension.dart';
 import 'package:recetas_aplazo/src/shared/router/routes/search_route.dart';
 import 'package:recetas_aplazo/src/shared/components/recipe_card.dart';
-import 'package:recetas_aplazo/src/extensions/context_extension.dart';
 import 'package:recetas_aplazo/src/data/entities/recipe.dart';
 import 'package:recetas_aplazo/src/shared/di/di.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

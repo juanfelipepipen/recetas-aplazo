@@ -27,6 +27,16 @@ class _RecipeDetailsLayout extends StatelessWidget {
           ],
         ),
 
+        /// Recipe category & area
+        Wrap(
+          direction: Axis.horizontal,
+          spacing: PipenGap.verySmallSize,
+          children: [
+            RecipeChip(title: recipe?.area),
+            RecipeChip(title: recipe?.category),
+          ],
+        ),
+
         /// Ingredients list
         PipenRow(
           spacing: PipenGap.smallSize,
