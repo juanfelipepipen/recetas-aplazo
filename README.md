@@ -171,9 +171,7 @@ test/
 ```
 ## **Limitaciones de proyecto**
 
-- **Categorización de recetas**: Debido a contratiempos, no se incluyó una personalización en el
-  identificador de la categoría y area de cada receta (colores diferentes).
+- **Pruebas de unidad**: Debido a contratiempos, no se incluyeron unit test en extenso
+  para servicios específicos.
 - **Testing**: El feature de testing para pipen_bloc, actualmente en desarrollo, no pudo ser
   incluido en pruebas de unidad por problemas de estabilidad.
-- **Pruebas de unidad**: Nuevamente, debido a contratiempos, no se incluyeron unit test en extenso
-  para servicios específicos.
